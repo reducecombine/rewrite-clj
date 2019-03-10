@@ -32,6 +32,14 @@
                  (ws/skip-whitespace z/next))
         (vary-meta zloc assoc ::end? true))))
 
+(defn next*
+  "Move to the next location in a depth-first manner. Whitespace and comments are not omitted."
+  [zloc]
+  (when zloc
+    (or (some->> zloc
+                 z/next)
+        (vary-meta zloc assoc ::end? true))))
+
 (defn end?
   "Check whether the given node is at the end of the depth-first traversal."
   [zloc]

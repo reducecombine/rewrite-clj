@@ -68,6 +68,7 @@
 
   [rewrite-clj.zip.walk
    prewalk
+   prewalk*
    postwalk]
 
   [rewrite-clj.zip.whitespace
